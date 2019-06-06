@@ -4,24 +4,22 @@ class CleverArray extends Array {
   }
 
   //sum method
-  sum() {
-    if(this.length < 1){
-      return NaN;
-    }
-    const sums = this.reduce((a, b) => a +b);
-    return sums;
+  get sum() {
+    if(this.length < 1 ){ return NaN }
+    return this.reduce((a, b) => a +b);
   }
 
   //average method
-  average() {
-    const avg = this.sum()/this.length;
-    return avg;
+  get average() {
+    if(this.length < 1 ){ return NaN }
+    return this.sum/this.length;
   }
-  
 }
 
-// const clev = new CleverArray();
-// console.log('array', clev);
+// const clev = new CleverArray(1,2,3,4);
+// CleverArray.prototype.sum = CleverArray.sumz()
+// CleverArray.prototype.average = CleverArray.averagez()
+// console.log(clev.length);
 
-// console.log(clev.sum());
+// console.log(CleverArray.averagez);
 export default CleverArray
